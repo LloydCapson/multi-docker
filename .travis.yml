@@ -13,5 +13,9 @@ after_success:
     - docker build -t lloydcapson/multi-nginx ./nginx
     - docker build -t lloydcapson/multi-server ./server
     - docker build -t lloydcapson/multi-worker ./worker
-
     
+    - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
+    - docker push lloydcapson/multi-client
+    - docker push lloydcapson/multi-nginx
+    - docker push lloydcapson/multi-server
+    - docker push lloydcapson/multi-worker
