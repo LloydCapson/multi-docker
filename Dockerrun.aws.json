@@ -5,19 +5,22 @@
             "name": "client",
             "image": "lloydcapson/multi-client",
             "hostname": "client",
-            "essential": false
+            "essential": false,
+            "memory": 64
         },
         {
             "name": "server",
             "image": "lloydcapson/multi-server",
             "hostname": "server",
-            "essential": false
+            "essential": false,
+            "memory": 64
         },
         {
             "name": "worker",
             "image": "lloydcapson/multi-worker",
             "hostname": "worker",
-            "essential": false
+            "essential": false,
+            "memory": 64
         },
         {
             "name": "nginx",
@@ -30,7 +33,8 @@
                     "containerPort": 80
                 }
             ],
-            "links": [ "client", "server" ]
+            "links": [ "client", "server" ],
+            "memory": 64
         }
     ]
 }
